@@ -1,3 +1,5 @@
+import { LoanComponent } from './../../loan/loan.component';
+
 import { Routes } from "@angular/router";
 
 import { DashboardComponent } from "../../dashboard/dashboard.component";
@@ -8,6 +10,7 @@ import { IconsComponent } from "../../icons/icons.component";
 import { MapsComponent } from "../../maps/maps.component";
 import { NotificationsComponent } from "../../notifications/notifications.component";
 import { UpgradeComponent } from "../../upgrade/upgrade.component";
+import {AccountComponent} from "../../account/account.component";
 
 export const AdminLayoutRoutes: Routes = [
   // {
@@ -53,7 +56,9 @@ export const AdminLayoutRoutes: Routes = [
   //     }]
   // }
   { path: "dashboard", component: DashboardComponent },
-  { path: "user-profile", component: UserProfileComponent }
+  { path: "user-profile", component: UserProfileComponent },
+ {path :'account', component: AccountComponent},
+ {path:'loan', component:LoanComponent}
   // { path: 'table-list',     component: TableListComponent },
   // { path: 'typography',     component: TypographyComponent },
   // { path: 'icons',          component: IconsComponent },
