@@ -1,4 +1,6 @@
+import { CustomerService } from '../service/customer.service';
 import { Component, OnInit } from '@angular/core';
+import { Customer } from 'app/model/customer';
 
 @Component({
   selector: 'app-user-profile',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserProfileComponent implements OnInit {
 
-  constructor() { }
+  customer:Customer;
+  constructor(private customerService: CustomerService) {
+    this.customer = new Customer();  }
 
   ngOnInit() {
   }
 
+  addCustomerData(customer:Customer){
+    this.customerService.addCustomer(customer).subscribe(data => {
+      this.customer = data;
+
+    });
+  }
 }
