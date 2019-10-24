@@ -1,0 +1,40 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <nav class="navbar justify-content-between">
+              <a class="navbar-brand">Navbar</a>
+              <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </nav>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class=" text-primary">
+                  <th>Account Number</th>
+                  <th>CIF Costumer</th>
+                  <th>Account Balance</th>
+                  <th>Created at</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let dataku of account">
+                    <td>{{dataku.accountNumber}}</td>
+                    <td>{{dataku.customerCif}}</td>
+                    <td>{{dataku.accountBalance}}</td>
+                    <td>{{dataku.createdAt}}</td>
+                
+                    <td><a class="btn btn-primary" href="#" role="button">Detail</a></td>
+
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>

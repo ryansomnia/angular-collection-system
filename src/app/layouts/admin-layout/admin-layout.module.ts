@@ -1,3 +1,6 @@
+import { FormDetailCostumerComponent } from './../../form-detail-costumer/form-detail-costumer.component';
+import { AccountTableComponent } from './../../account-table/account-table.component';
+import { ModalComponent } from './../../modal/modal.component';
 import { LoanComponent } from './../../loan/loan.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -12,7 +15,7 @@ import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import {AccountComponent} from '../../account/account.component';
-
+import { CustomerComponent} from '../../customer/customer.component';
 
 import {
   MatButtonModule,
@@ -45,7 +48,11 @@ import { from } from 'rxjs';
     NotificationsComponent,
     UpgradeComponent,
     AccountComponent,
-    LoanComponent
+    LoanComponent,
+    ModalComponent,
+    CustomerComponent,
+    AccountTableComponent,
+    FormDetailCostumerComponent,    
   ]
 })
 
