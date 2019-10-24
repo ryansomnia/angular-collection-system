@@ -1,0 +1,62 @@
+<div class="modal-header">
+  <h2 style="text-align: center">Add Account</h2>
+  <form (ngSubmit)="addAccountData(account)" class="container">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Account Number</label>
+      <input
+        type="text"
+        name="cif"
+        value="{{ accountNumber }}"
+        autofocus
+        autocomplete="off"
+        [(ngModel)]="account.accountNumber"
+        class="form-control"
+        placeholder="Enter Account Number"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">CIF Customer</label>
+      <input
+        type="text"
+        name="title"
+        [(ngModel)]="account.customerCif"
+        value="{{ customerCif }}"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter CIF Customer"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Account Balance</label>
+      <input
+        type="text"
+        value="{{ accountBalance }}"
+        name="publisher"
+        class="form-control"
+        id="exampleInputEmail1"
+        [(ngModel)]="account.accountBalance"
+        aria-describedby="emailHelp"
+        placeholder="Enter Balance"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Created At</label>
+      <input
+        type="text"
+        name="price"
+        value="{{ createdAt }}"
+        class="form-control"
+        [(ngModel)]="account.createdAt"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Created At"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
