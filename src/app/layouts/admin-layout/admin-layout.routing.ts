@@ -1,9 +1,10 @@
-import { FormDetailCostumerComponent } from './../../form-detail-costumer/form-detail-costumer.component';
-import { from } from 'rxjs';
-import { AccountTableComponent } from './../../account-table/account-table.component';
-import { CustomerComponent } from '../../customer/customer.component';
-import { ModalComponent } from './../../modal/modal.component';
-import { LoanComponent } from './../../loan/loan.component';
+import { FormDetailCostumerComponent } from "./../../form-detail-costumer/form-detail-costumer.component";
+
+import { from } from "rxjs";
+import { AccountTableComponent } from "./../../account-table/account-table.component";
+import { CustomerComponent } from "../../customer/customer.component";
+import { ModalComponent } from "./../../modal/modal.component";
+import { LoanComponent } from "./../../loan/loan.component";
 
 import { Routes } from "@angular/router";
 
@@ -14,7 +15,7 @@ import { IconsComponent } from "../../icons/icons.component";
 import { MapsComponent } from "../../maps/maps.component";
 import { NotificationsComponent } from "../../notifications/notifications.component";
 import { UpgradeComponent } from "../../upgrade/upgrade.component";
-import {AccountComponent} from "../../account/account.component";
+import { AccountComponent } from "../../account/account.component";
 
 export const AdminLayoutRoutes: Routes = [
   // {
@@ -61,12 +62,12 @@ export const AdminLayoutRoutes: Routes = [
   // }
   { path: "dashboard", component: DashboardComponent },
   { path: "user-profile", component: UserProfileComponent },
- {path :'account', component: AccountComponent},
- {path:'loan', component:LoanComponent},
- {path: 'customer-table', component: CustomerComponent},
- {path: 'account-table', component: AccountTableComponent},
- {path: 'form-detail', component: FormDetailCostumerComponent},
- {path:'modal', component:ModalComponent},
+  { path: "account", component: AccountComponent },
+  { path: "loan", component: LoanComponent },
+  { path: "customer-table", component: CustomerComponent },
+  { path: "account-table", component: AccountTableComponent },
+  { path: "form-detail", component: FormDetailCostumerComponent },
+  { path: "modal", component: ModalComponent }
 
   // { path: 'table-list',     component: TableListComponent },
   // { path: 'typography',     component: TypographyComponent },

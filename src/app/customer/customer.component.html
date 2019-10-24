@@ -1,44 +1,71 @@
 <div class="main-content">
   <div class="container-fluid">
-      <div class="row">
-          <div class="col-md-9">
-              <div class="card">
-                  <div class="card-header card-header-danger">
-                      <nav class="navbar justify-content-between">
-                        <a class="navbar-brand">Navbar</a>
-                        <form class="form-inline">
-                          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                        </form>
-                      </nav>
-                  </div>
-                  <div class="card-body">
-                      <div class="table-responsive">
-                          <table class="table">
-                              <thead class=" text-primary">
-                                  <th>CIF</th>
-                                  <th>First Name</th>
-                                  <th>Last Name</th>
-                                  <th>Address</th>
-                                  <th>Birth Date</th>
-                                  <th>Birth Place</th>
-                                  <th>Action</th>
-                              </thead>
-                              <tbody>
-                                  <tr *ngFor="let dataku of customer">
-                                    <td>{{dataku.cif}}</td>
-                                    <td>{{dataku.firstName}}</td>
-                                    <td>{{dataku.lastName}}</td>
-                                    <td>{{dataku.address}}</td>
-                                    <td>{{dataku.birthDate}}</td>
-                                    <td>{{dataku.birthPlace}}</td>
-                                    <td><a class="btn btn-primary" (click)="detailCustomerByCif(dataku.cif)" role="button">Detail</a></td>
-                                      
-                                  </tr>
-
-                              </tbody>
-                          </table>
-                      </div>
-                  </div>
-              </div>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <nav class="navbar justify-content-between">
+              <a class="navbar-brand">Navbar</a>
+              <form class="form-inline">
+                <input
+                  class="form-control mr-sm-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button
+                  class="btn btn-outline-success my-2 my-sm-0"
+                  type="submit"
+                >
+                  Search
+                </button>
+              </form>
+            </nav>
           </div>
+          <button (click)="open()" class="btn btn-primary mr-2">
+            Add Data
+          </button>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class=" text-primary">
+                  <th>CIF</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Address</th>
+                  <th>Birth Date</th>
+                  <th>Birth Place</th>
+                  <th>Action</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let dataku of customer">
+                    <td>{{ dataku.cif }}</td>
+                    <td>{{ dataku.firstName }}</td>
+                    <td>{{ dataku.lastName }}</td>
+                    <td>{{ dataku.address }}</td>
+                    <td>{{ dataku.birthDate }}</td>
+                    <td>{{ dataku.birthPlace }}</td>
+                    <td>
+                      <a
+                        class="btn btn-primary"
+                        (click)="openModalUpdate(dataku.cif)"
+                        role="button"
+                        >Update</a
+                      >
+                      <a
+                        class="btn btn-danger"
+                        (click)="deleteCus(dataku.cif)"
+                        role="button"
+                        >Delete</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
