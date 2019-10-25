@@ -12,6 +12,9 @@
                   type="search"
                   placeholder="Search"
                   aria-label="Search"
+                  name="search"
+                  [(ngModel)]="String"
+                  (keyup)="findCus(String)"
                 />
                 <button
                   class="btn btn-outline-success my-2 my-sm-0"

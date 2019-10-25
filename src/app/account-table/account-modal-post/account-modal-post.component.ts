@@ -1,8 +1,13 @@
 import { Account } from "../../model/account";
 import { Component, OnInit } from "@angular/core";
 import { AccountService } from "app/service/account.service";
-
+import { MomentDateFormatter } from "./MomentDateFormatter";
 import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
+
+import {
+  NgbDateParserFormatter,
+  NgbDateStruct
+} from "@ng-bootstrap/ng-bootstrap";
 @Component({
   selector: "app-account-modal-post",
   templateUrl: "./account-modal-post.component.html",

@@ -11,7 +11,7 @@ import { map } from "rxjs/operators";
 export class CustomerService {
   private reload = new Subject<void>();
   constructor(private http: HttpClient) {}
-  api_url = "http://192.168.1.8:8080/customer/";
+  api_url = "http://192.168.1.13:8080/customer/";
 
   getCustomerByCif(cif: String): Observable<any> {
     return this.http.get(this.api_url + cif);
@@ -36,6 +36,11 @@ export class CustomerService {
   deleteCustomerByCif(cif: String) {
     return this.http.delete<Customer>(this.api_url + cif);
   }
+
+  SearchCustomerByName(cif: String) {
+    return this.http.get<Customer>(this.api_url + "name?name=" + cif);
+  }
+
   updateCustomer(cif: String, value: any): Observable<any> {
     return this.http.put(this.api_url + cif, value).pipe(
       tap(() => {
