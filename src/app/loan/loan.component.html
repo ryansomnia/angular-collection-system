@@ -7,12 +7,22 @@
             <nav class="navbar justify-content-between">
               <a class="navbar-brand">Navbar</a>
               <form class="form-inline">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <input
+                  class="form-control mr-sm-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button
+                  class="btn btn-outline-success my-2 my-sm-0"
+                  type="submit"
+                >
+                  Search
+                </button>
               </form>
             </nav>
           </div>
-         
+
           <div class="card-body">
             <div class="table-responsive">
               <table class="table">
@@ -30,20 +40,25 @@
                   <th>Action</th>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let dataku of loan">
-                    <td>{{dataku.loanId}}</td>
-                    <td>{{dataku.accountNumber}}</td>
-                    <td>{{dataku.loanAmount}}</td>
-                    <td>{{dataku.loanBalance}}</td>
-                    <td>{{dataku.loanStatus}}</td>
-                    <td>{{dataku.openDate}}</td>
-                    <td>{{dataku.dueDate}}</td>
-                    <td>{{dataku.loanTenor}}</td>
-                    <td>{{dataku.loanTypeCode}}</td>
-                    <td>{{dataku.customerCif}}</td>
+                  <tr *ngFor="let L of loan">
+                    <td>{{ L.loanId }}</td>
+                    <td>{{ L.accountNumber }}</td>
+                    <td>{{ L.loanAmount }}</td>
+                    <td>{{ L.loanBalance }}</td>
+                    <td>{{ L.loanStatus }}</td>
+                    <td>{{ L.openDate }}</td>
+                    <td>{{ L.dueDate }}</td>
 
-                    <td><a class="btn btn-primary" href="#" role="button">Detail</a></td>
-                    
+                    <td *ngIf="L.loanTenor == 1">PAID</td>
+                    <td *ngIf="L.loanTenor == 0">DUE</td>
+                    <td>{{ L.loanTypeCode }}</td>
+                    <td>{{ L.customerCif }}</td>
+
+                    <td>
+                      <a class="btn btn-primary" href="#" role="button"
+                        >Detail</a
+                      >
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -51,3 +66,6 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>

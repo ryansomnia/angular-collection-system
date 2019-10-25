@@ -21,6 +21,7 @@ import { AccountComponent } from "../../account/account.component";
 import { CustomerComponent } from "../../customer/customer.component";
 import { NgbModule, NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 import { AccountModalPostComponent } from "app/account-table/account-modal-post/account-modal-post.component";
+import { DetailsCustomerComponent } from "../../customer/details-customer/details-customer.component";
 
 import {
   MatButtonModule,
@@ -62,7 +63,8 @@ import { from } from "rxjs";
     FormDetailCostumerComponent,
     FormDetailcusComponent,
     AccountModalPostComponent,
-    AccountModalUpdateComponent
+    AccountModalUpdateComponent,
+    DetailsCustomerComponent
   ],
   entryComponents: [
     FormModalCusComponent,
