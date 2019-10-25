@@ -1,0 +1,82 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="container contact">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="contact-info">
+                <h2>Details Customer</h2>
+                <!-- <h4>terserah deh mau tulis apa !</h4> -->
+              </div>
+            </div>
+            <div class="col-md-9">
+              <form>
+                <div class="contact-form wrap-detail">
+                  <div class="form-group detail">
+                    <div class="col-md-10 ">
+                      <label for="">CIF</label>
+                      <p>{{ detailCus.cif }}</p>
+                    </div>
+                  </div>
+                  <div class="form-group detail">
+                    <div class="col-md-10">
+                      <label for="">First Name</label>
+                      <p>{{ detailCus.firstName }}</p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-md-10">
+                      <label for="">Last Name</label>
+                      <p>{{ detailCus.lastName }}</p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-md-10">
+                      <label for="">Address</label>
+                      <p>{{ detailCus.address }}</p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-md-10">
+                      <label for="">Birth Date</label>
+                      <p>{{ detailCus.birthDate }}</p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-md-10">
+                      <label for="">Birth Place</label>
+                      <p>{{ detailCus.birthPlace }}</p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">account number</th>
+                          <th scope="col">accountBalance</th>
+                          <th scope="col">createdAt</th>
+                          <th scope="col">ACTION</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let AccCus of accCusData">
+                          <th scope="row">1</th>
+                          <td>{{ AccCus.accountNumber }}</td>
+                          <td>{{ AccCus.accountBalance }}</td>
+                          <td>{{ AccCus.createdAt }}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

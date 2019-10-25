@@ -17,7 +17,7 @@ import { UpgradeComponent } from "./upgrade/upgrade.component";
 import { AgmCoreModule } from "@agm/core";
 import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
 import { LoginComponent } from "./login/login.component";
-import { LoanModalPostComponent } from './loan/loan-modal-post/loan-modal-post.component';
+import { LoanModalPostComponent } from "./loan/loan-modal-post/loan-modal-post.component";
 
 @NgModule({
   imports: [
@@ -33,7 +33,12 @@ import { LoanModalPostComponent } from './loan/loan-modal-post/loan-modal-post.c
       apiKey: "YOUR_GOOGLE_MAPS_API_KEY"
     })
   ],
-  declarations: [AppComponent, AdminLayoutComponent, LoginComponent, LoanModalPostComponent, ],
+  declarations: [
+    AppComponent,
+    AdminLayoutComponent,
+    LoginComponent,
+    LoanModalPostComponent
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

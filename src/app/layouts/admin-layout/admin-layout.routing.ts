@@ -1,3 +1,4 @@
+import { DetailsCustomerComponent } from "./../../customer/details-customer/details-customer.component";
 import { FormDetailCostumerComponent } from "./../../form-detail-costumer/form-detail-costumer.component";
 
 import { from } from "rxjs";
@@ -65,6 +66,7 @@ export const AdminLayoutRoutes: Routes = [
   { path: "account", component: AccountComponent },
   { path: "loan", component: LoanComponent },
   { path: "customer-table", component: CustomerComponent },
+  { path: "detail/:cif", component: DetailsCustomerComponent },
   { path: "account-table", component: AccountTableComponent },
   { path: "form-detail", component: FormDetailCostumerComponent },
   { path: "modal", component: ModalComponent }
