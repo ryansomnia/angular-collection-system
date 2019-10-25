@@ -4,6 +4,11 @@ import { Account } from "./../model/account";
 import { Component, OnInit } from "@angular/core";
 import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { AccountModalPostComponent } from "./account-modal-post/account-modal-post.component";
+import {
+  isNumber,
+  toInteger,
+  padNumber
+} from "@ng-bootstrap/ng-bootstrap/util/util";
 
 @Component({
   selector: "app-account-table",
@@ -20,6 +25,9 @@ export class AccountTableComponent implements OnInit {
 
   ngOnInit() {
     this.getAll();
+    this.accountService.reloaded.subscribe(() => {
+      this.getAll();
+    });
   }
 
   reloadData() {
@@ -65,6 +73,23 @@ export class AccountTableComponent implements OnInit {
       modalRef.componentInstance.createdAt = data["data"].createdAt;
 
       console.log(data["data"]);
+    });
+  }
+
+  searchAccount(String) {
+    this.accountService.searchByAccountNumber(String).subscribe(data => {
+      this.account = data["data"];
+    });
+  }
+  searchAccountByCif(String) {
+    this.accountService.searchAccountByCIF(String).subscribe(data => {
+      if (data["data"] != null) {
+        this.account = data["data"];
+      } else if (String == "") {
+        this.getAll();
+      } else {
+        alert("cif not found");
+      }
     });
   }
 }

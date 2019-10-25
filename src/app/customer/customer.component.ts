@@ -51,6 +51,12 @@ export class CustomerComponent implements OnInit {
     });
   }
 
+  findCus(String) {
+    this.customerService.SearchCustomerByName(String).subscribe(data => {
+      this.customer = data["data"];
+    });
+  }
+
   open() {
     this.activeModal.open(FormModalCusComponent);
   }
