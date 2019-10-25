@@ -1,112 +1,53 @@
 <div class="main-content">
   <div class="container-fluid">
-      <div class="row">
-          <div class="col-md-9">
-              <div class="card">
-                  <div class="card-header card-header-danger">
-                      <nav class="navbar justify-content-between">
-                        <a class="navbar-brand">Navbar</a>
-                        <form class="form-inline">
-                          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                        </form>
-                      </nav>
-                  </div>
-                  <div class="card-body">
-                      <div class="table-responsive">
-                          <table class="table">
-                              <thead class=" text-primary">
-                                  <th>Account Number</th>
-                                  <th> Name</th>
-                                  <th>CIF</th>
-                                  <th>Due Date</th>
-                                  <th>Nominal (Rp)</th>
-                                  <th>status</th>
-                                  <th>action</th>
-                              </thead>
-                              <tbody>
-                                  <tr>
-                                      <td>099301087788535</td>
-                                      <td>Samuel Dian</td>
-                                      <td>SD12345</td>
-                                      <td>15/11/2019</td>
-                                      <td>1.500.000</td>
-                                      <td>lunas</td>
-                                      <td><a class="btn btn-primary" href="#" role="button">Detail</a></td>
-                                  </tr>
-                                  <tr>
-                                    <td>099301087788535</td>
-                                    <td>Samuel Dian</td>
-                                    <td>SD12345</td>
-                                    <td>15/11/2019</td>
-                                    <td>1.500.000</td>
-                                    <td>lunas</td>
-                                     <td><a class="btn btn-primary" href="#" role="button">Detail</a></td>
-                                  </tr>
-                                  <tr>
-                                    <td>099301087788535</td>
-                                    <td>Samuel Dian</td>
-                                    <td>SD12345</td>
-                                    <td>15/11/2019</td>
-                                    <td>1.500.000</td>
-                                    <td>lunas</td>
-                                     <td><a class="btn btn-primary" href="#" role="button">Detail</a></td>
-                                      
-                                  </tr>
-                                  <tr>
-                                    <td>099301087788535</td>
-                                    <td>Samuel Dian</td>
-                                    <td>SD12345</td>
-                                    <td>15/11/2019</td>
-                                    <td>1.500.000</td>
-                                    <td>lunas</td>
-                                     <td><a class="btn btn-primary" href="#" role="button">Detail</a></td>
-                                      
-                                  </tr>
-                                  <tr>
-                                    <td>099301087788535</td>
-                                    <td>Samuel Dian</td>
-                                    <td>SD12345</td>
-                                    <td>15/11/2019</td>
-                                    <td>1.500.000</td>
-                                    <td>lunas</td>
-                                     <td><a class="btn btn-primary" href="#" role="button">Detail</a></td>
-                                      
-                                  </tr>
-                                  <tr>
-                                    <td>099301087788535</td>
-                                    <td>Samuel Dian</td>
-                                    <td>SD12345</td>
-                                    <td>15/11/2019</td>
-                                    <td>1.500.000</td>
-                                    <td>lunas</td>
-                                     <td><a class="btn btn-primary" href="#" role="button">Detail</a></td>
-                                      
-                                  </tr>
-                                  <tr>
-                                    <td>099301087788535</td>
-                                    <td>Samuel Dian</td>
-                                    <td>SD12345</td>
-                                    <td>15/11/2019</td>
-                                    <td>1.500.000</td>
-                                    <td>lunas</td>
-                                     <td><a class="btn btn-primary" href="#" role="button">Detail</a></td>
-                                      
-                                  </tr>
-                                  <tr>
-                                    <td>099301087788535</td>
-                                    <td>Samuel Dian</td>
-                                    <td>SD12345</td>
-                                    <td>15/11/2019</td>
-                                    <td>1.500.000</td>
-                                    <td>lunas</td>
-                                    <td><a class="btn btn-primary" href="#" role="button">Detail</a></td>
-                                      
-                                  </tr>
-
-                              </tbody>
-                          </table>
-                      </div>
-                  </div>
-              </div>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <nav class="navbar justify-content-between">
+              <a class="navbar-brand">Navbar</a>
+              <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </nav>
           </div>
+         
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class=" text-primary">
+                  <th>Loan Id</th>
+                  <th>Account Number</th>
+                  <th>Loan Amount</th>
+                  <th>Loan Balance</th>
+                  <th>Loan Status</th>
+                  <th>Open Date</th>
+                  <th>Due Date</th>
+                  <th>Loan Tenor</th>
+                  <th>Loan Type Code</th>
+                  <th>Customer Cif</th>
+                  <th>Action</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let dataku of loan">
+                    <td>{{dataku.loanId}}</td>
+                    <td>{{dataku.accountNumber}}</td>
+                    <td>{{dataku.loanAmount}}</td>
+                    <td>{{dataku.loanBalance}}</td>
+                    <td>{{dataku.loanStatus}}</td>
+                    <td>{{dataku.openDate}}</td>
+                    <td>{{dataku.dueDate}}</td>
+                    <td>{{dataku.loanTenor}}</td>
+                    <td>{{dataku.loanTypeCode}}</td>
+                    <td>{{dataku.customerCif}}</td>
+
+                    <td><a class="btn btn-primary" href="#" role="button">Detail</a></td>
+                    
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
