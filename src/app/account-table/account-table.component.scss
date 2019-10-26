@@ -9,4 +9,9 @@
 }
 .navbar form {
     margin-right: 10px;
+
+}
+.card [class*=card-header-] {
+    margin: 0px 15px 15px;
+    position: relative;
 }

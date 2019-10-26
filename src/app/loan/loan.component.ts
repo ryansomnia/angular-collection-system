@@ -7,7 +7,7 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-loan',
   templateUrl: './loan.component.html',
-  styleUrls: ['./loan.component.css']
+  styleUrls: ['./loan.component.css','./loan.component.scss']
 })
 export class LoanComponent implements OnInit {
   loan: Loan[];

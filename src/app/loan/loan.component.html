@@ -55,7 +55,9 @@
                     <td>{{ L.customerCif }}</td>
 
                     <td>
-                      <a class="btn btn-primary" href="#" role="button"
+                      <a [routerLink]="['/form-detail/', L.loanId]"
+                      class="btn btn-info"
+                      role="button"
                         >Detail</a
                       >
                     </td>

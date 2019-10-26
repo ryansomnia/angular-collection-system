@@ -13,7 +13,7 @@ import {
 @Component({
   selector: "app-account-table",
   templateUrl: "./account-table.component.html",
-  styleUrls: ["./account-table.component.css"]
+  styleUrls: ["./account-table.component.css","./account-table.component.scss"]
 })
 export class AccountTableComponent implements OnInit {
   account: Account[];

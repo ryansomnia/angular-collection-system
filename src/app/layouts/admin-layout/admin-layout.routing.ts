@@ -1,3 +1,4 @@
+import { BillingTableComponent } from '../../loan/billing-table/billing-table.component';
 import { DetailsCustomerComponent } from "./../../customer/details-customer/details-customer.component";
 import { FormDetailCostumerComponent } from "./../../form-detail-costumer/form-detail-costumer.component";
 
@@ -68,7 +69,7 @@ export const AdminLayoutRoutes: Routes = [
   { path: "customer-table", component: CustomerComponent },
   { path: "detail/:cif", component: DetailsCustomerComponent },
   { path: "account-table", component: AccountTableComponent },
-  { path: "form-detail", component: FormDetailCostumerComponent },
+  { path: "form-detail/:loanId", component: FormDetailCostumerComponent },
   { path: "modal", component: ModalComponent }
 
   // { path: 'table-list',     component: TableListComponent },

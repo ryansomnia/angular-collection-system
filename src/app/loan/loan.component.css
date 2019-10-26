@@ -1,6 +1,9 @@
 .table{
     text-align: left;
 }
+th{
+    text-align: center;
+}
 .row {
    
     margin-left: 5px;
