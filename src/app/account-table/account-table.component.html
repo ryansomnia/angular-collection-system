@@ -38,21 +38,27 @@
                   <th>Created at</th>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let dataku of account">
-                    <td>{{ dataku.accountNumber }}</td>
-                    <td>{{ dataku.customerCif }}</td>
-                    <td>{{ dataku.accountBalance }}</td>
-                    <td>{{ dataku.createdAt }}</td>
+                  <tr *ngFor="let A of account">
+                    <td>{{ A.accountNumber }}</td>
+                    <td>{{ A.customerCif }}</td>
+                    <td>{{ A.accountBalance }}</td>
+                    <td>{{ A.createdAt }}</td>
 
                     <td>
                       <button
                         class="btn btn-info"
-                        (click)="openModalUpdate(dataku.accountNumber)"
+                        (click)="openModalUpdate(A.accountNumber)"
                       >
-                        Detail
+                        Update
                       </button>
+                      <a
+                        class="btn btn-warning"
+                        [routerLink]="['/accountDetail', A.accountNumber]"
+                        >Detail</a
+                      >
+
                       <button
-                        (click)="deleteData(dataku.accountNumber)"
+                        (click)="deleteData(A.accountNumber)"
                         class="btn btn-danger"
                       >
                         Delete
