@@ -1,4 +1,6 @@
-import { BillingTableComponent } from '../../loan/billing-table/billing-table.component';
+import { LoandetailComponent } from "./../../loan/loandetail/loandetail.component";
+import { BillingComponent } from "./../../billing/billing.component";
+import { BillingTableComponent } from "../../loan/billing-table/billing-table.component";
 import { DetailsCustomerComponent } from "./../../customer/details-customer/details-customer.component";
 import { FormDetailCostumerComponent } from "./../../form-detail-costumer/form-detail-costumer.component";
 
@@ -71,8 +73,11 @@ export const AdminLayoutRoutes: Routes = [
   { path: "detail/:cif", component: DetailsCustomerComponent },
   { path: "accountDetail/:accountNumber", component: AccountDetailComponent },
   { path: "account-table", component: AccountTableComponent },
-  { path: "form-detail/:loanId", component: FormDetailCostumerComponent },
-  { path: "modal", component: ModalComponent }
+
+  { path: "modal", component: ModalComponent },
+  { path: "loandetail/:loanId", component: LoandetailComponent },
+
+  { path: "billing", component: BillingComponent }
 
   // { path: 'table-list',     component: TableListComponent },
   // { path: 'typography',     component: TypographyComponent },

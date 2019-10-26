@@ -1,0 +1,60 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <nav class="navbar justify-content-between">
+              <a class="navbar-brand">Navbar</a>
+              <form class="form-inline">
+                <input
+                  class="form-control mr-sm-2"
+                  type="search"
+                  name="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                  [(ngModel)]="String"
+                />
+                <button
+                  class="btn btn-outline-success my-2 my-sm-0"
+                  type="submit"
+                  (click)="searchByBillingId(String)"
+                >
+                  Search
+                </button>
+              </form>
+            </nav>
+            <button class="btn btn-primary mr-2">
+              Add Account
+            </button>
+          </div>
+
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class=" text-primary">
+                  <th>Billing Id</th>
+                  <th>Loan Id</th>
+                  <th>billing Amount</th>
+                  <th>Billing Date</th>
+                  <th>billing Due Date</th>
+                  <th>Billing Date</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let B of billing">
+                    <td>{{ B.billingId }}</td>
+                    <td>{{ B.loanId }}</td>
+                    <td>{{ B.billingAmount }}</td>
+                    <td>{{ B.billDate }}</td>
+                    <td>{{ B.billingDueDate }}</td>
+                    <td>{{ B.billingStatus }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
