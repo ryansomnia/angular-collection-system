@@ -17,6 +17,7 @@ import { MapsComponent } from "../../maps/maps.component";
 import { NotificationsComponent } from "../../notifications/notifications.component";
 import { UpgradeComponent } from "../../upgrade/upgrade.component";
 import { AccountComponent } from "../../account/account.component";
+import { AccountDetailComponent } from "../../account-table/account-detail/account-detail.component";
 
 export const AdminLayoutRoutes: Routes = [
   // {
@@ -67,6 +68,7 @@ export const AdminLayoutRoutes: Routes = [
   { path: "loan", component: LoanComponent },
   { path: "customer-table", component: CustomerComponent },
   { path: "detail/:cif", component: DetailsCustomerComponent },
+  { path: "accountDetail/:accountNumber", component: AccountDetailComponent },
   { path: "account-table", component: AccountTableComponent },
   { path: "form-detail", component: FormDetailCostumerComponent },
   { path: "modal", component: ModalComponent }
