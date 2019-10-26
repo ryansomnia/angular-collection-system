@@ -1,6 +1,18 @@
 .table{
     text-align: center;
 }
+a.btn.btn-primary{
+    color: white;
+    padding: 5px;
+}
+a.btn.btn-danger{
+    color: white;
+    padding: 5px;
+}
+a.btn.btn-info{
+    padding: 8px 35px 5px 35px;
+    margin: 0px;
+}
 .row {
    
     margin-left: 5px;

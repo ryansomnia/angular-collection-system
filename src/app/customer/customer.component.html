@@ -5,7 +5,7 @@
         <div class="card">
           <div class="card-header card-header-danger">
             <nav class="navbar justify-content-between">
-              <a class="navbar-brand">Navbar</a>
+              <a class="navbar-brand">Customer Data</a>
               <form class="form-inline">
                 <input
                   class="form-control mr-sm-2"
@@ -24,10 +24,11 @@
                 </button>
               </form>
             </nav>
+            <button (click)="open()" class="btn btn-primary mr-2">
+              Add Data
+            </button>
           </div>
-          <button (click)="open()" class="btn btn-primary mr-2">
-            Add Data
-          </button>
+          
           <div class="card-body">
             <div class="table-responsive">
               <table class="table">
@@ -66,8 +67,7 @@
                         [routerLink]="['/detail/', dataku.cif]"
                         class="btn btn-info"
                         role="button"
-                        >Detail</a
-                      >
+                        >Detail</a>
                     </td>
                   </tr>
                 </tbody>

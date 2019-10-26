@@ -8,7 +8,7 @@ import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
 @Component({
   selector: "app-customer",
   templateUrl: "./customer.component.html",
-  styleUrls: ["./customer.component.css"]
+  styleUrls: ["./customer.component.css","./customer.component.scss"]
 })
 export class CustomerComponent implements OnInit {
   customer: Customer[];

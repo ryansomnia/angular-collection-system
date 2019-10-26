@@ -37,7 +37,7 @@ import { LoanModalPostComponent } from "./loan/loan-modal-post/loan-modal-post.c
     AppComponent,
     AdminLayoutComponent,
     LoginComponent,
-    LoanModalPostComponent
+    LoanModalPostComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,4 @@
+import { BillingTableComponent } from '../../loan/billing-table/billing-table.component';
 import { AccountModalUpdateComponent } from "./../../account-table/account-modal-update/account-modal-update.component";
 import { FormModalCusComponent } from "./../../customer/form-modal-cus/form-modal-cus.component";
 import { FormDetailcusComponent } from "./../../customer/form-detailcus/form-detailcus.component";
@@ -65,7 +66,11 @@ import { from } from "rxjs";
     AccountModalPostComponent,
     AccountModalUpdateComponent,
     DetailsCustomerComponent,
+<<<<<<< src/app/layouts/admin-layout/admin-layout.module.ts
+    BillingTableComponent
+=======
     AccountDetailComponent
+>>>>>>> src/app/layouts/admin-layout/admin-layout.module.ts
   ],
   entryComponents: [
     FormModalCusComponent,
