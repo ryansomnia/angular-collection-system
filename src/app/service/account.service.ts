@@ -3,14 +3,14 @@ import { Injectable } from "@angular/core";
 import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { Observable, Subject } from "rxjs";
 import { catchError, retry, tap, map } from "rxjs/operators";
-
+import Api from "./Api";
 @Injectable({
   providedIn: "root"
 })
 export class AccountService {
   private reload = new Subject<void>();
   constructor(private http: HttpClient) {}
-  api_url = "http://192.168.1.13:8080/account/";
+  api_url = Api + "account/";
 
   getAccountByAccountNumber(accountNumber: String): Observable<any> {
     return this.http.get(this.api_url + accountNumber);

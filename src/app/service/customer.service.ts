@@ -4,14 +4,14 @@ import { Observable, Subject } from "rxjs";
 import { catchError, retry, tap } from "rxjs/operators";
 import { Customer } from "../model/customer";
 import { map } from "rxjs/operators";
-
+import Api from "./Api";
 @Injectable({
   providedIn: "root"
 })
 export class CustomerService {
   private reload = new Subject<void>();
   constructor(private http: HttpClient) {}
-  api_url = "http://192.168.1.13:8080/customer/";
+  api_url = Api + "customer/";
 
   getCustomerByCif(cif: String): Observable<any> {
     return this.http.get(this.api_url + cif);
@@ -39,6 +39,9 @@ export class CustomerService {
 
   SearchCustomerByName(cif: String) {
     return this.http.get<Customer>(this.api_url + "name?name=" + cif);
+  }
+  SearchCustomerByCif(cif: String) {
+    return this.http.get<Customer>(this.api_url + cif);
   }
 
   updateCustomer(cif: String, value: any): Observable<any> {
