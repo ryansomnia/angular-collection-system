@@ -10,7 +10,7 @@ import { catchError, retry, tap, map } from "rxjs/operators";
 export class AccountService {
   private reload = new Subject<void>();
   constructor(private http: HttpClient) {}
-  api_url = "http://192.168.1.13:8080/account/";
+  api_url = "http://192.168.1.14:8080/account/";
 
   getAccountByAccountNumber(accountNumber: Number): Observable<any> {
     return this.http.get(this.api_url + accountNumber);

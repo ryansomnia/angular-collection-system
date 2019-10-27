@@ -12,14 +12,14 @@
                   type="search"
                   name="search"
                   placeholder="Search"
-                  [(ngModel)]="String"
+                  [(ngModel)]="searchText"
                   aria-label="Search"
                 />
                 <button
                   class="btn btn-outline-success my-2 my-sm-0"
                   type="submit"
                   (click)="searchAccountByCif(String)"
-                >
+                > 
                 <i class="material-icons">
                   search
                   </i>
@@ -45,7 +45,7 @@
                   <th>Action</th>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let dataku of account | paginate: { itemsPerPage: 5, currentPage: p }; let i = index ">
+                  <tr *ngFor="let dataku of account |filter:searchText | paginate: { itemsPerPage: 5, currentPage: p }; let i = index ">
                     <td>{{ dataku.accountNumber }}</td>
                     <td>{{ dataku.customerCif }}</td>
                     <td>{{ dataku.accountBalance }}</td>
@@ -54,15 +54,13 @@
                     <td>
                       <button
                         class="btn btn-primary" id ="detailButton"
-                        (click)="openModalUpdate(dataku.accountNumber)"
                          >
                          <i class="material-icons">
                           visibility
                           </i>
                         Detail
                       </button>
-                      <button
-                        (click)="deleteData(dataku.accountNumber)" id="deleteButton"
+                      <button id="deleteButton"
                         class="btn btn-danger"
                       >
                       <i class="material-icons">
@@ -76,7 +74,8 @@
                 <pagination-controls (pageChange)="p = $event"></pagination-controls>
               </table>
             </div>
-           </div>
+            
+          </div>
         </div>
       </div>
     </div>

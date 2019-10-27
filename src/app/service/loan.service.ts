@@ -8,7 +8,7 @@ import { Injectable } from "@angular/core";
   providedIn: "root"
 })
 export class LoanService {
-  api_url = "http://192.168.1.13:8080/loan/";
+  api_url = "http://192.168.1.14:8080/loan/";
   constructor(private http: HttpClient) {}
 
   getAllLoan(): Observable<Loan[]> {

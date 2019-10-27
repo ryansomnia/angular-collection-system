@@ -19,12 +19,17 @@
                 <button
                   class="btn btn-outline-success my-2 my-sm-0"
                   type="submit"
+                  
                 >
-                  Search
-                </button>
+                <i class="material-icons">
+                  search
+                  </i>
+                  </button>
               </form>
             </nav>
             <button (click)="open()" class="btn btn-primary mr-2">
+                <i class="material-icons">
+                    post_add</i>
               Add Data
             </button>
           </div>
@@ -42,7 +47,7 @@
                   <th>Action</th>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let dataku of customer">
+                  <tr *ngFor="let dataku of customer| paginate: { itemsPerPage: 5, currentPage: p }; let i = index ">
                     <td>{{ dataku.cif }}</td>
                     <td>{{ dataku.firstName }}</td>
                     <td>{{ dataku.lastName }}</td>
@@ -52,27 +57,43 @@
                     <td>
                       <a
                         class="btn btn-primary"
+                        id="detailButton"
                         (click)="openModalUpdate(dataku.cif)"
                         role="button"
-                        >Update</a
+                        >
+                        <i class="material-icons">
+                          edit
+                          </i>
+                        Update</a
                       >
                       <a
                         class="btn btn-danger"
+                        id="deleteButton"
                         (click)="deleteCus(dataku.cif)"
                         role="button"
-                        >Delete</a
+                        ><i class="material-icons">
+                          delete
+                          </i>
+                        Delete</a
                       >
 
                       <a
                         [routerLink]="['/detail/', dataku.cif]"
                         class="btn btn-info"
                         role="button"
-                        >Detail</a>
+                        
+                        >
+                        <i class="material-icons">
+                          visibility
+                          </i>
+                        Detail</a>
                     </td>
                   </tr>
                 </tbody>
-              </table>
-            </div>
+                </table>
+                
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+             </div>
           </div>
         </div>
       </div>
