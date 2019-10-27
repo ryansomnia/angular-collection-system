@@ -12,14 +12,14 @@
                   type="search"
                   name="search"
                   placeholder="Search"
-                  [(ngModel)]="String"
+                  [(ngModel)]="searchText"
                   aria-label="Search"
                 />
                 <button
                   class="btn btn-outline-success my-2 my-sm-0"
                   type="submit"
-                  (click)="searchAccount(String)"
-                >
+                  (click)="searchAccountByCif(String)"
+                > 
                 <i class="material-icons">
                   search
                   </i>
@@ -33,7 +33,7 @@
               Add Account
             </button>
           </div>
-
+          
           <div class="card-body">
             <div class="table-responsive">
               <table class="table">
@@ -45,8 +45,7 @@
                   <th>Action</th>
                 </thead>
                 <tbody>
-<<<<<<< HEAD
-                  <tr *ngFor="let dataku of account | paginate: { itemsPerPage: 5, currentPage: p }; let i = index ">
+                  <tr *ngFor="let dataku of account |filter:searchText | paginate: { itemsPerPage: 5, currentPage: p }; let i = index ">
                     <td>{{ dataku.accountNumber }}</td>
                     <td>{{ dataku.customerCif }}</td>
                     <td>{{ dataku.accountBalance }}</td>
@@ -55,39 +54,13 @@
                     <td>
                       <button
                         class="btn btn-primary" id ="detailButton"
-                        (click)="openModalUpdate(dataku.accountNumber)"
                          >
                          <i class="material-icons">
                           visibility
                           </i>
                         Detail
-=======
-                  <tr *ngFor="let A of account">
-                    <td>{{ A.accountNumber }}</td>
-                    <td>{{ A.customerCif }}</td>
-                    <td>{{ A.accountBalance }}</td>
-                    <td>{{ A.createdAt }}</td>
-
-                    <td>
-                      <button
-                        class="btn btn-info"
-                        (click)="openModalUpdate(A.accountNumber)"
-                      >
-                        Update
->>>>>>> 51ba195ca9e67064e6beb94c45db4a630ab39f7e
                       </button>
-                      <a
-                        class="btn btn-warning"
-                        [routerLink]="['/accountDetail', A.accountNumber]"
-                        >Detail</a
-                      >
-
-                      <button
-<<<<<<< HEAD
-                        (click)="deleteData(dataku.accountNumber)" id="deleteButton"
-=======
-                        (click)="deleteData(A.accountNumber)"
->>>>>>> 51ba195ca9e67064e6beb94c45db4a630ab39f7e
+                      <button id="deleteButton"
                         class="btn btn-danger"
                       >
                       <i class="material-icons">
@@ -101,7 +74,8 @@
                 <pagination-controls (pageChange)="p = $event"></pagination-controls>
               </table>
             </div>
-           </div>
+            
+          </div>
         </div>
       </div>
     </div>

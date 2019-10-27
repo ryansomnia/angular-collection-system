@@ -12,6 +12,7 @@ import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
 })
 export class CustomerComponent implements OnInit {
   customer: Customer[];
+  p:number;
   // customerUpdate: Customer = new Customer();
   constructor(
     private customerService: CustomerService,

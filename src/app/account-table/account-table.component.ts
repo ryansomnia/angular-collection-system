@@ -17,6 +17,7 @@ import {
 })
 export class AccountTableComponent implements OnInit {
   account: Account[];
+  p:number;
   // accountUpdate: Account = new Account();
   constructor(
     private accountService: AccountService,

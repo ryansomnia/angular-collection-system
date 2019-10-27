@@ -11,6 +11,7 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class LoanComponent implements OnInit {
   loan: Loan[];
+  p:number;
 loans: Loan = new Loan();
   constructor(
     private loanService: LoanService

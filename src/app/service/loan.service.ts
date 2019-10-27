@@ -8,7 +8,7 @@ import Api from "./Api";
   providedIn: "root"
 })
 export class LoanService {
-  api_url = Api + "loan/";
+  api_url = "http://192.168.1.14:8080/loan/";
   constructor(private http: HttpClient) {}
 
   getAllLoan(): Observable<Loan[]> {
