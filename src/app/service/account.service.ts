@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { Observable, Subject } from "rxjs";
 import { catchError, retry, tap, map } from "rxjs/operators";
-
+import Api from "./Api";
 @Injectable({
   providedIn: "root"
 })

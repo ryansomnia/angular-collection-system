@@ -1,0 +1,92 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="container contact">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="contact-info">
+                <h2>Details Loan</h2>
+                <!-- <h4>terserah deh mau tulis apa !</h4> -->
+              </div>
+            </div>
+            <div class="col-md-9">
+              <form>
+                <div *ngFor="let L of loanCus" class="contact-form wrap-detail">
+                  <div class="form-group detail">
+                    <div class="col-md-10 ">
+                      <label for="">Loan Id</label>
+                      <p>{{ L.loanId }}</p>
+                    </div>
+                  </div>
+                  <div class="form-group detail">
+                    <div class="col-md-10">
+                      <label for="">Account Number</label>
+                      <p>{{ L.accountNumber }}</p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-md-10">
+                      <label for="">Loan Balance</label>
+                      <p>{{ L.loanBalance }}</p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-md-10">
+                      <label for="">Loan Status</label>
+                      <p>{{ L.loanStatus }}</p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-md-10">
+                      <label for="">Due Date</label>
+                      <p></p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-md-10">
+                      <label for="">{{ L.dueDate }} </label>
+                      <p></p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-md-10">
+                      <label for="">Customer Cif </label>
+                      <p>{{ L.customerCif }}</p>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">billingId</th>
+                          <th scope="col">billingAmount</th>
+                          <th scope="col">billDate</th>
+                          <th scope="col">billingDueDate</th>
+                          <th scope="col">billingStatus</th>
+                        </tr>
+                      </thead>
+                      <tbody *ngFor="let B of getbyLoanId">
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>{{ B.billingId }}</td>
+                          <td>{{ B.billingAmount }}</td>
+                          <td>{{ B.billDate }}</td>
+                          <td>{{ B.billingDueDate }}</td>
+                          <td>{{ B.billingStatus }}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

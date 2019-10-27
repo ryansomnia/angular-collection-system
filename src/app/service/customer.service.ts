@@ -4,7 +4,7 @@ import { Observable, Subject } from "rxjs";
 import { catchError, retry, tap } from "rxjs/operators";
 import { Customer } from "../model/customer";
 import { map } from "rxjs/operators";
-
+import Api from "./Api";
 @Injectable({
   providedIn: "root"
 })
@@ -39,6 +39,9 @@ export class CustomerService {
 
   SearchCustomerByName(cif: String) {
     return this.http.get<Customer>(this.api_url + "name?name=" + cif);
+  }
+  SearchCustomerByCif(cif: String) {
+    return this.http.get<Customer>(this.api_url + cif);
   }
 
   updateCustomer(cif: String, value: any): Observable<any> {

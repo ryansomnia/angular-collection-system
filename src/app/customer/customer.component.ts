@@ -8,7 +8,7 @@ import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
 @Component({
   selector: "app-customer",
   templateUrl: "./customer.component.html",
-  styleUrls: ["./customer.component.css","./customer.component.scss"]
+  styleUrls: ["./customer.component.css", "./customer.component.scss"]
 })
 export class CustomerComponent implements OnInit {
   customer: Customer[];
@@ -39,11 +39,10 @@ export class CustomerComponent implements OnInit {
       this.customer = data;
     });
   }
-  detailCustomerByCif(cif: String) {
-    this.customerService.getCustomerByCif(cif).subscribe(data => {
+  detailCustomerByCif(String) {
+    this.customerService.getCustomerByCif(String).subscribe(data => {
       this.customerService = data["data"];
     });
-    this.router.navigate(["form-detail" + cif]);
   }
 
   deleteCus(cif: String) {
@@ -60,6 +59,13 @@ export class CustomerComponent implements OnInit {
 
   open() {
     this.activeModal.open(FormModalCusComponent);
+  }
+
+  searchByCif(String) {
+    this.customerService.SearchCustomerByCif(String).subscribe(data => {
+      this.customer = data["data"];
+      console.log(data["data"]);
+    });
   }
 
   openModalUpdate(cif) {

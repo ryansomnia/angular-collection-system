@@ -48,13 +48,13 @@
                     <td>{{ L.accountNumber }}</td>
                     <td>{{ L.loanAmount }}</td>
                     <td>{{ L.loanBalance }}</td>
-                    <td>{{ L.loanStatus }}</td>
-                    <td>{{ L.openDate }}</td>
-                    <td>{{ L.dueDate }}</td>
-
                     <td *ngIf="L.loanTenor == 1">PAID</td>
                     <td *ngIf="L.loanTenor == 0">DUE</td>
+                    <td>{{ L.openDate }}</td>
+                    <td>{{ L.dueDate }}</td>
+                    <td>{{ L.loanTenor }}</td>
                     <td>{{ L.loanTypeCode }}</td>
+
                     <td>{{ L.customerCif }}</td>
 
                     <td>

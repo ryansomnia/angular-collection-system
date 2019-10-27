@@ -3,7 +3,7 @@ import { Observable } from "rxjs";
 import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { Loan } from "./../model/loan";
 import { Injectable } from "@angular/core";
-
+import Api from "./Api";
 @Injectable({
   providedIn: "root"
 })
@@ -14,8 +14,8 @@ export class LoanService {
   getAllLoan(): Observable<Loan[]> {
     return this.http.get<Loan[]>(this.api_url);
   }
-  getLoanByLoanId(loanId: Number): Observable<any> {
-    return this.http.get(this.api_url + loanId);
+  getLoanByLoanId(String): Observable<any> {
+    return this.http.get(this.api_url + String);
   }
   getLoanByAccountId(accuntId: String): Observable<any> {
     return this.http.get(
