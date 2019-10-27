@@ -74,7 +74,8 @@ import { from } from "rxjs";
     AccountModalUpdateComponent,
     DetailsCustomerComponent,
     BillingTableComponent,
-    AccountDetailComponent
+    AccountDetailComponent,
+    FormDetailCostumerComponent
     
   ],
   entryComponents: [

@@ -5,13 +5,13 @@
         <div class="card">
           <div class="card-header card-header-danger">
             <nav class="navbar justify-content-between">
-              <a class="navbar-brand">Navbar</a>
+              <a class="navbar-brand">Billing Data</a>
               <form class="form-inline">
                 <input
                   class="form-control mr-sm-2"
                   type="search"
                   name="search"
-                  placeholder="Search"
+                  placeholder="Enter Billing ID..."
                   aria-label="Search"
                   [(ngModel)]="String"
                 />
@@ -20,14 +20,13 @@
                   type="submit"
                   (click)="searchByBillingId(String)"
                 >
-                  Search
+                <i class="material-icons">
+                    search
+                    </i>
                 </button>
               </form>
             </nav>
-            <button class="btn btn-primary mr-2">
-              Add Account
-            </button>
-          </div>
+              </div>
 
           <div class="card-body">
             <div class="table-responsive">
@@ -41,7 +40,7 @@
                   <th>Billing Date</th>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let B of billing">
+                  <tr *ngFor="let B of billing | paginate: { itemsPerPage: 5, currentPage: p }; let i = index ">
                     <td>{{ B.billingId }}</td>
                     <td>{{ B.loanId }}</td>
                     <td>{{ B.billingAmount }}</td>
@@ -51,6 +50,7 @@
                   </tr>
                 </tbody>
               </table>
+              <pagination-controls (pageChange)="p = $event"></pagination-controls>
             </div>
           </div>
         </div>

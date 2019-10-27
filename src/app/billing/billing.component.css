@@ -1,22 +1,23 @@
 .table{
-    text-align: left;
-}
-th{
     text-align: center;
+}
+a.btn.btn-primary{
+    color: white;
+    padding: 5px;
+}
+a.btn.btn-danger{
+    color: white;
+    padding: 5px;
+}
+a.btn.btn-info{
+    padding: 6px 49px 6px 49px;
+    margin: 0px;
 }
 .row {
    
     margin-left: 5px;
     margin-right: 5px;
 }
-.btn.btn-info {
-    color: #fff;
-    background-color: #00bcd4;
-    border-color: #00bcd4;
-    padding: 3px 30px 0px 30px;
-    box-shadow: 0 2px 2px 0 rgba(0, 188, 212, 0.14), 0 3px 1px -2px rgba(0, 188, 212, 0.2), 0 1px 5px 0 rgba(0, 188, 212, 0.12);
-}
-
 .navbar[_ngcontent-gtw-c5] {
     border: 0;
     border-radius: 3px;
@@ -30,14 +31,14 @@ th{
     padding: 0.625rem 0;
     margin-bottom: 5px;
     color: #555;
+    /* background-color: #fff !important; */
     /* box-shadow: 0 4px 18px 0px rgba(0, 0, 0, 0.12), 0 7px 10px -5px rgba(0, 0, 0, 0.15); */
 }
 th{
     color: #555;
-    padding: 5px;
 }
-
 .row {
-    margin-left: 5px;
-    margin-right: -300px;
+    margin-left: 80px;
+    margin-right: -200px;
+    margin-top: -70px;
 }

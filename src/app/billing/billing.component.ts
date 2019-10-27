@@ -6,11 +6,11 @@ import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
 @Component({
   selector: "app-billing",
   templateUrl: "./billing.component.html",
-  styleUrls: ["./billing.component.scss"]
+  styleUrls: ["./billing.component.scss","./billing.component.css"]
 })
 export class BillingComponent implements OnInit {
   billing: Billing[];
-
+  p:number;
   constructor(
     private activeModal: NgbModal,
     private billingService: BillingService
