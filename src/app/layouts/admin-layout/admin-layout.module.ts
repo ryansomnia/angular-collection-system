@@ -1,10 +1,7 @@
-<<<<<<< src/app/layouts/admin-layout/admin-layout.module.ts
 import { NgxPaginationModule } from 'ngx-pagination';
 import { BillingTableComponent } from '../../loan/billing-table/billing-table.component';
-=======
 import { LoandetailComponent } from "./../../loan/loandetail/loandetail.component";
 import { BillingComponent } from "./../../billing/billing.component";
->>>>>>> src/app/layouts/admin-layout/admin-layout.module.ts
 import { AccountModalUpdateComponent } from "./../../account-table/account-modal-update/account-modal-update.component";
 import { FormModalCusComponent } from "./../../customer/form-modal-cus/form-modal-cus.component";
 import { FormDetailcusComponent } from "./../../customer/form-detailcus/form-detailcus.component";
@@ -66,9 +63,9 @@ import { from } from "rxjs";
     UpgradeComponent,
     AccountComponent,
     LoanComponent,
+    LoandetailComponent,
     ModalComponent,
     CustomerComponent,
-    LoandetailComponent,
     AccountTableComponent,
     FormDetailCostumerComponent,
     BillingComponent,
@@ -76,11 +73,9 @@ import { from } from "rxjs";
     AccountModalPostComponent,
     AccountModalUpdateComponent,
     DetailsCustomerComponent,
-    // <<<<<<< src/app/layouts/admin-layout/admin-layout.module.ts
-    //     BillingTableComponent
-    // =======
+    BillingTableComponent,
     AccountDetailComponent
-    // src/app/layouts/admin-layout/admin-layout.module.ts
+    
   ],
   entryComponents: [
     FormModalCusComponent,
