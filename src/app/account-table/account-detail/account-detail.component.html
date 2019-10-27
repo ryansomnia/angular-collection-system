@@ -1,0 +1,67 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="container contact">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="contact-info">
+                <h2>Details Account</h2>
+                <!-- <h4>terserah deh mau tulis apa !</h4> -->
+              </div>
+            </div>
+            <div class="col-md-9">
+              <div class="contact-form wrap-detail">
+                <div class="form-group detail">
+                  <div class="col-md-10 ">
+                    <label for="">Account Number</label>
+                    <p>{{ account.accountNumber }}</p>
+                  </div>
+                </div>
+                <div class="form-group detail">
+                  <div class="col-md-10">
+                    <label for="">Account Balance</label>
+                    <p>{{ account.accountBalance }}</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-10">
+                    <label for=""> Customer CIF</label>
+                    <p>{{ account.customerCif }}</p>
+                  </div>
+                </div>
+
+                <div class="form-group"></div>
+                <div class="clearfix"></div>
+              </div>
+              <div class="form-group">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">loanId</th>
+
+                      <th scope="col">loanAmount</th>
+                      <th scope="col">loanBalance</th>
+
+                      <th scope="col">loanTenor</th>
+                      <th scope="col">loanTypeCode</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let L of loan">
+                      <td>{{ L.loanId }}</td>
+                      <td>{{ L.loanAmount }}</td>
+                      <td>{{ L.loanBalance }}</td>
+                      <td>{{ L.loanTenor }}</td>
+                      <td>{{ L.loanTypeCode }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

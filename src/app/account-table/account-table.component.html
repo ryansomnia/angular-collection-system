@@ -45,6 +45,7 @@
                   <th>Action</th>
                 </thead>
                 <tbody>
+<<<<<<< HEAD
                   <tr *ngFor="let dataku of account | paginate: { itemsPerPage: 5, currentPage: p }; let i = index ">
                     <td>{{ dataku.accountNumber }}</td>
                     <td>{{ dataku.customerCif }}</td>
@@ -60,9 +61,33 @@
                           visibility
                           </i>
                         Detail
-                      </button>
+=======
+                  <tr *ngFor="let A of account">
+                    <td>{{ A.accountNumber }}</td>
+                    <td>{{ A.customerCif }}</td>
+                    <td>{{ A.accountBalance }}</td>
+                    <td>{{ A.createdAt }}</td>
+
+                    <td>
                       <button
+                        class="btn btn-info"
+                        (click)="openModalUpdate(A.accountNumber)"
+                      >
+                        Update
+>>>>>>> 51ba195ca9e67064e6beb94c45db4a630ab39f7e
+                      </button>
+                      <a
+                        class="btn btn-warning"
+                        [routerLink]="['/accountDetail', A.accountNumber]"
+                        >Detail</a
+                      >
+
+                      <button
+<<<<<<< HEAD
                         (click)="deleteData(dataku.accountNumber)" id="deleteButton"
+=======
+                        (click)="deleteData(A.accountNumber)"
+>>>>>>> 51ba195ca9e67064e6beb94c45db4a630ab39f7e
                         class="btn btn-danger"
                       >
                       <i class="material-icons">

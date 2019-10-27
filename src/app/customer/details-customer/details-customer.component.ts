@@ -27,8 +27,6 @@ export class DetailsCustomerComponent implements OnInit {
     const cif = this.route.snapshot.paramMap.get("cif");
     this.customerService.getCustomerByCif(cif).subscribe(data => {
       this.detailCus = data["data"];
-
-      console.log(data["data"]);
     });
   }
 
@@ -36,7 +34,6 @@ export class DetailsCustomerComponent implements OnInit {
     const cif = this.route.snapshot.paramMap.get("cif");
     this.accountService.searchAccountByCIF(cif).subscribe(data => {
       this.accCusData = data["data"];
-      console.log(data);
     });
   }
 }

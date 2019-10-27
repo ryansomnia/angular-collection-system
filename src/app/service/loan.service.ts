@@ -17,6 +17,11 @@ export class LoanService {
   getLoanByLoanId(loanId: Number): Observable<any> {
     return this.http.get(this.api_url + loanId);
   }
+  getLoanByAccountId(accuntId: String): Observable<any> {
+    return this.http.get(
+      this.api_url + "accountNumber?accountNumber=" + accuntId
+    );
+  }
   // getLoanByLoanNumber
   // getLoanByLoanStatus
   // getLoanByOpenDate

@@ -12,7 +12,7 @@ export class AccountService {
   constructor(private http: HttpClient) {}
   api_url = "http://192.168.1.14:8080/account/";
 
-  getAccountByAccountNumber(accountNumber: Number): Observable<any> {
+  getAccountByAccountNumber(accountNumber: String): Observable<any> {
     return this.http.get(this.api_url + accountNumber);
   }
   get reloaded() {
