@@ -18,15 +18,15 @@
                 <button
                   class="btn btn-outline-success my-2 my-sm-0"
                   type="submit"
-                  (click)="searchByBillingId(String)"
+                  (click)="searchData(String)"
                 >
-                <i class="material-icons">
+                  <i class="material-icons">
                     search
-                    </i>
+                  </i>
                 </button>
               </form>
             </nav>
-              </div>
+          </div>
 
           <div class="card-body">
             <div class="table-responsive">
@@ -40,7 +40,13 @@
                   <th>Billing Date</th>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let B of billing | paginate: { itemsPerPage: 5, currentPage: p }; let i = index ">
+                  <tr
+                    *ngFor="
+                      let B of billing
+                        | paginate: { itemsPerPage: 5, currentPage: p };
+                      let i = index
+                    "
+                  >
                     <td>{{ B.billingId }}</td>
                     <td>{{ B.loanId }}</td>
                     <td>{{ B.billingAmount }}</td>
@@ -50,7 +56,9 @@
                   </tr>
                 </tbody>
               </table>
-              <pagination-controls (pageChange)="p = $event"></pagination-controls>
+              <pagination-controls
+                (pageChange)="p = $event"
+              ></pagination-controls>
             </div>
           </div>
         </div>

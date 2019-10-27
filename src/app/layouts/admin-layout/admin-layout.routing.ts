@@ -75,7 +75,7 @@ export const AdminLayoutRoutes: Routes = [
   { path: "account-table", component: AccountTableComponent },
 
   { path: "modal", component: ModalComponent },
-  { path: "loandetail/:loanId", component: LoandetailComponent },
+  { path: "detailLoan/:loanId", component: LoandetailComponent },
 
   { path: "billing", component: BillingComponent }
 

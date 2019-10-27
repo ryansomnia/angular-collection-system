@@ -6,11 +6,11 @@ import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
 @Component({
   selector: "app-billing",
   templateUrl: "./billing.component.html",
-  styleUrls: ["./billing.component.scss","./billing.component.css"]
+  styleUrls: ["./billing.component.scss", "./billing.component.css"]
 })
 export class BillingComponent implements OnInit {
   billing: Billing[];
-  p:number;
+  p: number;
   constructor(
     private activeModal: NgbModal,
     private billingService: BillingService
@@ -32,5 +32,23 @@ export class BillingComponent implements OnInit {
       this.billing = data["data"];
       console.log(data["data"]);
     });
+  }
+  searchByLoanId(String) {
+    this.billingService.getBillingByLoan(String).subscribe(data => {
+      this.billing = data["data"];
+      console.log(data["data"]);
+    });
+  }
+
+  searchData(String) {
+    this.billingService.getBillingByBillingId(String).subscribe(data => {
+      this.billing = data["data"];
+      console.log(data["data"]);
+    });
+
+    // this.billingService.getBillingByLoan(String).subscribe(data => {
+    //   this.billing = data["data"];
+    //   console.log(data["data"]);
+    // });
   }
 }

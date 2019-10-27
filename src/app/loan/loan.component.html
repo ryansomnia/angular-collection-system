@@ -12,15 +12,17 @@
                   type="search"
                   placeholder="Enter Load ID..."
                   aria-label="Search"
+                  name="search"
+                  [(ngModel)]="String"
                 />
                 <button
                   class="btn btn-outline-success my-2 my-sm-0"
                   type="submit"
+                  (click)="searchLoan(String)"
                 >
-                <i class="material-icons">
-                  search
+                  <i class="material-icons">
+                    search
                   </i>
-                
                 </button>
               </form>
             </nav>
@@ -43,7 +45,13 @@
                   <th>Action</th>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let L of loan | paginate: { itemsPerPage: 5, currentPage: p }; let i = index ">
+                  <tr
+                    *ngFor="
+                      let L of loan
+                        | paginate: { itemsPerPage: 5, currentPage: p };
+                      let i = index
+                    "
+                  >
                     <td>{{ L.loanId }}</td>
                     <td>{{ L.accountNumber }}</td>
                     <td>{{ L.loanAmount }}</td>
@@ -58,19 +66,20 @@
                     <td>{{ L.customerCif }}</td>
 
                     <td>
-                      <a [routerLink]="['/form-detail/', L.loanId]"
-                      class="btn btn-info"
-
-                      role="button"
-                        > <i class="material-icons">
-                            visibility
-                            </i>Detail</a
+                      <a
+                        [routerLink]="['/detailLoan/', L.loanId]"
+                        class="btn btn-info"
+                        role="button"
+                      >
+                        <i class="material-icons"> visibility </i>Detail</a
                       >
                     </td>
                   </tr>
                 </tbody>
               </table>
-              <pagination-controls (pageChange)="p = $event"></pagination-controls>
+              <pagination-controls
+                (pageChange)="p = $event"
+              ></pagination-controls>
             </div>
           </div>
         </div>
