@@ -12,7 +12,7 @@ import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
 })
 export class CustomerComponent implements OnInit {
   customer: Customer[];
-  p:number;
+  p: number;
   // customerUpdate: Customer = new Customer();
   constructor(
     private customerService: CustomerService,
@@ -63,7 +63,12 @@ export class CustomerComponent implements OnInit {
 
   searchByCif(String) {
     this.customerService.SearchCustomerByCif(String).subscribe(data => {
-      this.customer = data["data"];
+      if (data["data"] != undefined) {
+        this.customer = data["data"];
+      } else {
+        alert("Customer Not Found");
+      }
+
       console.log(data["data"]);
     });
   }

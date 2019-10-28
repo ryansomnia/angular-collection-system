@@ -10,7 +10,7 @@ import Api from "./Api";
 export class AccountService {
   private reload = new Subject<void>();
   constructor(private http: HttpClient) {}
-  api_url = Api +  "account/";
+  api_url = Api + "account/";
 
   getAccountByAccountNumber(accountNumber: String): Observable<any> {
     return this.http.get(this.api_url + accountNumber);
@@ -40,6 +40,9 @@ export class AccountService {
 
   searchAccountByCIF(cif: String): Observable<any> {
     return this.http.get<Account>(this.api_url + "cif?cif=" + cif);
+  }
+  topUpBalance(accNum: Number, value: any): Observable<any> {
+    return this.http.put<Account>(this.api_url + "topup/" + accNum, value);
   }
   updateAccount(accountNumber: Number, value: any): Observable<any> {
     return this.http.put(this.api_url + accountNumber, value).pipe(

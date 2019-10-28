@@ -35,9 +35,15 @@ export class LoanComponent implements OnInit {
 
   searchLoan(String) {
     this.loanService.getLoanByLoanId(String).subscribe(data => {
-      this.loan = data["data"];
-      console.log(data);
+      if (data["data"] != undefined) {
+        this.loan = data["data"];
+      } else {
+        alert("Loan Not Found");
+      }
+
+      console.log(data["data"]);
     });
+
     // const b = this.loanService.getLoanByAccountId(String).subscribe(data => {
     //   this.loan = data["data"];
 

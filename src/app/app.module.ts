@@ -1,4 +1,4 @@
-import { from } from 'rxjs';
+import { from } from "rxjs";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from "@angular/core";
@@ -12,14 +12,12 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { UserProfileComponent } from "./user-profile/user-profile.component";
 import { TypographyComponent } from "./typography/typography.component";
 import { IconsComponent } from "./icons/icons.component";
-import { MapsComponent } from "./maps/maps.component";
-import { NotificationsComponent } from "./notifications/notifications.component";
-import { UpgradeComponent } from "./upgrade/upgrade.component";
+
 import { AgmCoreModule } from "@agm/core";
 import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
 import { LoginComponent } from "./login/login.component";
 import { LoanModalPostComponent } from "./loan/loan-modal-post/loan-modal-post.component";
-import {Ng2SearchPipeModule} from 'ng2-search-filter';
+import { Ng2SearchPipeModule } from "ng2-search-filter";
 
 @NgModule({
   imports: [
@@ -31,7 +29,7 @@ import {Ng2SearchPipeModule} from 'ng2-search-filter';
     HttpClientModule,
     ComponentsModule,
     RouterModule,
-    
+
     AppRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: "YOUR_GOOGLE_MAPS_API_KEY"

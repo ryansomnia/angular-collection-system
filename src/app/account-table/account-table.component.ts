@@ -13,11 +13,11 @@ import {
 @Component({
   selector: "app-account-table",
   templateUrl: "./account-table.component.html",
-  styleUrls: ["./account-table.component.css","./account-table.component.scss"]
+  styleUrls: ["./account-table.component.css", "./account-table.component.scss"]
 })
 export class AccountTableComponent implements OnInit {
   account: Account[];
-  p:number;
+  p: number;
   // accountUpdate: Account = new Account();
   constructor(
     private accountService: AccountService,
@@ -68,10 +68,11 @@ export class AccountTableComponent implements OnInit {
       //   modalRef.componentInstance[key] = data["data"][key];
       // }
 
-      modalRef.componentInstance.accountNumber = data["data"].accountNumber;
-      modalRef.componentInstance.customerCif = data["data"].customerCif;
-      modalRef.componentInstance.accountBalance = data["data"].accountBalance;
-      modalRef.componentInstance.createdAt = data["data"].createdAt;
+      modalRef.componentInstance.accountNumber = data["data"][0].accountNumber;
+      modalRef.componentInstance.customerCif = data["data"][0].customerCif;
+      modalRef.componentInstance.accountBalance =
+        data["data"][0].accountBalance;
+      modalRef.componentInstance.createdAt = data["data"][0].createdAt;
 
       console.log(data["data"]);
     });
@@ -79,7 +80,11 @@ export class AccountTableComponent implements OnInit {
 
   searchAccount(String) {
     this.accountService.searchByAccountNumber(String).subscribe(data => {
-      this.account = data["data"];
+      if (data["data"] != undefined) {
+        this.account = data["data"];
+      } else {
+        alert("Account Not Found");
+      }
     });
   }
   searchAccountByCif(String) {

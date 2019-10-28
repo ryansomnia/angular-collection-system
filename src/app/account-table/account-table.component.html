@@ -20,16 +20,16 @@
                   type="submit"
                   (click)="searchAccount(String)"
                 >
-                <i class="material-icons">
-                  search
+                  <i class="material-icons">
+                    search
                   </i>
                 </button>
               </form>
             </nav>
             <button (click)="openModalAdd()" class="btn btn-primary mr-2">
-                <i class="material-icons">
-                    post_add
-                    </i>
+              <i class="material-icons">
+                post_add
+              </i>
               Add Account
             </button>
           </div>
@@ -45,7 +45,13 @@
                   <th>Action</th>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let dataku of account | paginate: { itemsPerPage: 5, currentPage: p }; let i = index ">
+                  <tr
+                    *ngFor="
+                      let dataku of account
+                        | paginate: { itemsPerPage: 5, currentPage: p };
+                      let i = index
+                    "
+                  >
                     <td>{{ dataku.accountNumber }}</td>
                     <td>{{ dataku.customerCif }}</td>
                     <td>{{ dataku.accountBalance }}</td>
@@ -53,35 +59,46 @@
 
                     <td>
                       <button
-                        class="btn btn-primary" id ="detailButton"
+                        class="btn btn-primary"
+                        id="detailButton"
                         [routerLink]="['/accountDetail', dataku.accountNumber]"
-                         >
-                         <i class="material-icons">
+                      >
+                        <i class="material-icons">
                           visibility
-                          </i>
+                        </i>
                         Detail
-
                       </button>
-                   
 
                       <button
+                        class="btn btn-primary"
+                        id="detailButton"
+                        (click)="openModalUpdate(dataku.accountNumber)"
+                      >
+                        <i class="material-icons">
+                          edit
+                        </i>
+                        edit
+                      </button>
 
-                        (click)="deleteData(dataku.accountNumber)" id="deleteButton"
-
+                      <button
+                        (click)="deleteData(dataku.accountNumber)"
+                        id="deleteButton"
                         class="btn btn-danger"
                       >
-                      <i class="material-icons">
-                        delete
+                        <i class="material-icons">
+                          delete
                         </i>
                         Delete
                       </button>
                     </td>
                   </tr>
                 </tbody>
-                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                <pagination-controls
+                  (pageChange)="p = $event"
+                ></pagination-controls>
               </table>
             </div>
-           </div>
+          </div>
         </div>
       </div>
     </div>

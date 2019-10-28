@@ -29,7 +29,12 @@ export class BillingComponent implements OnInit {
 
   searchByBillingId(String) {
     this.billingService.getBillingByBillingId(String).subscribe(data => {
-      this.billing = data["data"];
+      if (data["data"] != undefined) {
+        this.billing = data["data"];
+      } else {
+        alert("Billing Not Found");
+      }
+
       console.log(data["data"]);
     });
   }
@@ -42,7 +47,12 @@ export class BillingComponent implements OnInit {
 
   searchData(String) {
     this.billingService.getBillingByBillingId(String).subscribe(data => {
-      this.billing = data["data"];
+      if (data["data"] != undefined) {
+        this.billing = data["data"];
+      } else {
+        alert("Billing Not Found");
+      }
+
       console.log(data["data"]);
     });
 

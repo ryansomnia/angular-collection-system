@@ -1,5 +1,6 @@
-import { NgxPaginationModule } from 'ngx-pagination';
-import { BillingTableComponent } from '../../loan/billing-table/billing-table.component';
+import { AccountAddBalanceModalComponent } from "./../../account-table/account-add-balance-modal/account-add-balance-modal.component";
+import { NgxPaginationModule } from "ngx-pagination";
+import { BillingTableComponent } from "../../loan/billing-table/billing-table.component";
 import { LoandetailComponent } from "./../../loan/loandetail/loandetail.component";
 import { BillingComponent } from "./../../billing/billing.component";
 import { AccountModalUpdateComponent } from "./../../account-table/account-modal-update/account-modal-update.component";
@@ -16,11 +17,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AdminLayoutRoutes } from "./admin-layout.routing";
 import { DashboardComponent } from "../../dashboard/dashboard.component";
 import { UserProfileComponent } from "../../user-profile/user-profile.component";
-import { TypographyComponent } from "../../typography/typography.component";
-import { IconsComponent } from "../../icons/icons.component";
-import { MapsComponent } from "../../maps/maps.component";
-import { NotificationsComponent } from "../../notifications/notifications.component";
-import { UpgradeComponent } from "../../upgrade/upgrade.component";
+
 import { AccountComponent } from "../../account/account.component";
 import { CustomerComponent } from "../../customer/customer.component";
 import { NgbModule, NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
@@ -56,11 +53,7 @@ import { from } from "rxjs";
     DashboardComponent,
     FormModalCusComponent,
     UserProfileComponent,
-    TypographyComponent,
-    IconsComponent,
-    MapsComponent,
-    NotificationsComponent,
-    UpgradeComponent,
+
     AccountComponent,
     LoanComponent,
     LoandetailComponent,
@@ -75,14 +68,15 @@ import { from } from "rxjs";
     DetailsCustomerComponent,
     BillingTableComponent,
     AccountDetailComponent,
-    FormDetailCostumerComponent
-    
+    FormDetailCostumerComponent,
+    AccountAddBalanceModalComponent
   ],
   entryComponents: [
     FormModalCusComponent,
     FormDetailcusComponent,
     AccountModalPostComponent,
-    AccountModalUpdateComponent
+    AccountModalUpdateComponent,
+    AccountAddBalanceModalComponent
   ],
   providers: [NgbActiveModal]
 })

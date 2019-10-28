@@ -1,3 +1,5 @@
+import { AccountAddBalanceModalComponent } from "./../account-add-balance-modal/account-add-balance-modal.component";
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { Loan } from "app/model/loan";
 import { LoanService } from "./../../service/loan.service";
 import { ActivatedRoute } from "@angular/router";
@@ -17,7 +19,8 @@ export class AccountDetailComponent implements OnInit {
   constructor(
     private accountService: AccountService,
     private route: ActivatedRoute,
-    private loanService: LoanService
+    private loanService: LoanService,
+    private activeModal: NgbModal
   ) {}
 
   ngOnInit() {
@@ -42,5 +45,23 @@ export class AccountDetailComponent implements OnInit {
       this.loan = data["data"];
       console.log(data["data"]);
     });
+  }
+
+  openModalUpdate() {
+    const modalRef = this.activeModal.open(AccountAddBalanceModalComponent);
+    const accountNum = this.route.snapshot.paramMap.get("accountNumber");
+    this.accountService
+      .getAccountByAccountNumber(accountNum)
+      .subscribe(data => {
+        // for (const key in data["data"]) {
+        //   modalRef.componentInstance[key] = data["data"][key];
+        // }
+        console.log(data["data"]);
+
+        modalRef.componentInstance.accountNumber =
+          data["data"][0].accountNumber;
+        modalRef.componentInstance.accountBalance =
+          data["data"][0].accountBalance;
+      });
   }
 }

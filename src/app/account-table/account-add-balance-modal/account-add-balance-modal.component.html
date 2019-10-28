@@ -1,0 +1,20 @@
+<div class="modal-header">
+  <h2 style="text-align: center">Add Balance Account</h2>
+  <div>
+    <form (ngSubmit)="topUpBalance()" class="container">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Account Number</label>
+        <input
+          type="text"
+          name="cif"
+          autofocus
+          autocomplete="off"
+          class="form-control"
+          placeholder="Enter Account Number"
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
