@@ -26,3 +26,9 @@ th{
     margin-right: -300px;
     
 }
+ul.ngx-pagination {
+    margin-left: 0;
+    margin-bottom: 1rem;
+    padding: 0px 0px 0px 0px;
+    margin: 0px -160px 0px 0px;
+}

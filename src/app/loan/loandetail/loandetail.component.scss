@@ -68,3 +68,8 @@ button {
 .wrap-detail {
   text-align: left;
 }
+.main-panel .main-content {
+  margin-top: 0px;
+  padding: 30px 15px;
+  min-height: calc(100vh - 123px);
+}

@@ -57,21 +57,11 @@
                     <td>{{ dataku.accountBalance }}</td>
                     <td>{{ dataku.createdAt }}</td>
 
-                    <td>
-                      <button
-                        class="btn btn-primary"
-                        id="detailButton"
-                        [routerLink]="['/accountDetail', dataku.accountNumber]"
-                      >
-                        <i class="material-icons">
-                          visibility
-                        </i>
-                        Detail
-                      </button>
+                   <td>
 
                       <button
                         class="btn btn-primary"
-                        id="detailButton"
+                        id="editButton"
                         (click)="openModalUpdate(dataku.accountNumber)"
                       >
                         <i class="material-icons">
@@ -90,13 +80,25 @@
                         </i>
                         Delete
                       </button>
+                       
+                      <button
+                        class="btn btn-info"
+                        id="detailButton"
+                        [routerLink]="['/accountDetail', dataku.accountNumber]"
+                      >
+                        <i class="material-icons">
+                          visibility
+                        </i>
+                        Detail
+                      </button>
                     </td>
                   </tr>
                 </tbody>
-                <pagination-controls
-                  (pageChange)="p = $event"
-                ></pagination-controls>
+               
               </table>
+              <pagination-controls
+              (pageChange)="p = $event"
+            ></pagination-controls>
             </div>
           </div>
         </div>
